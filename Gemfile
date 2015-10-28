@@ -11,6 +11,7 @@ gem 'bcrypt'
 gem 'bootstrap-sass'
 gem "letter_opener"
 gem 'chartkick'
+gem 'devise'
 
 group :development do
   gem 'byebug'

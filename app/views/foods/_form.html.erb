@@ -1,9 +1,7 @@
 <%= render 'layouts/errors', :object => @food %>
 
-<%= form_for @food do |f| %>
-  <%= f.label :name %>
-  <%= f.text_field :name %>
-  <%= f.label :cal_consumed, "Calories Consumed" %>
-  <%= f.text_field :cal_consumed %>
-  <%= f.submit %>
+<%= form_for @food, :html => {:class => "form-vertical center"} do |f| %>
+  <%= f.text_field :name, :placeholder => "Name", class: 'form-control' %>
+  <%= f.text_field :cal_consumed, :placeholder => "Calories Consumed", class: 'form-control' %>
+  <%= f.submit "Add Food" %>
 <% end %>

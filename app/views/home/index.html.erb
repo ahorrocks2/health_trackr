@@ -1,11 +1,13 @@
-<h1>Welcom to Health Trackr</h1>
+<h1>Welcome to Health Trackr</h1>
 <h4>Keep track of your fitness and food.</h4>
 
 <div class="row">
   <div class="col-sm-6">
     <h3>Food</h3>
     <hr>
-
+    <!-- <div class="total_cal">
+      <h4>Total Consumed: <%= @total_consumed %></h4>
+    </div> -->
     <div class="list">
       <% if @foods.any? %>
         <table class="table">
@@ -25,7 +27,7 @@
     </div>
 
     <div class="add_track">
-      <%= link_to 'Add a Food', new_food_path, class: 'btn btn-sm btn-primary form-control' %><br><br>
+      <%= link_to 'Add a Food', new_food_path, id: 'new_food', class: 'btn btn-sm btn-primary form-control', remote: true %><br><br>
     </div>
 
   </div>
@@ -53,7 +55,7 @@
     </div>
 
     <div class="add_track">
-      <%= link_to 'Add a Workout', new_workout_path, class: 'btn btn-sm btn-primary form-control' %><br><br>
+      <%= link_to 'Add a Workout', new_workout_path, id: 'new_workout', class: 'btn btn-sm btn-primary form-control', remote: true %><br><br>
     </div>
 
 </div>

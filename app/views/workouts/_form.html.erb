@@ -1,9 +1,7 @@
 <%= render 'layouts/errors', :object => @workout %>
 
-<%= form_for @workout do |f| %>
-  <%= f.label :name %>
-  <%= f.text_field :name %>
-  <%= f.label :cal_burned, "Calories Burned" %>
-  <%= f.text_field :cal_burned %>
-  <%= f.submit %>
+<%= form_for @workout, :html => {:class => "form-vertical center"} do |f| %>
+  <%= f.text_field :name, :placeholder => "Name", class: 'form-control' %>
+  <%= f.text_field :cal_burned, :placeholder => "Calories Burned", class: 'form-control' %>
+  <%= f.submit "Add Workout" %>
 <% end %>

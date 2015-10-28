@@ -6,7 +6,10 @@ class FoodsController < ApplicationController
   def create
     @food = Food.new(food_params)
     if @food.save
-      redirect_to '/'
+      respond_to do |format|
+        format.html { redirect_to root_path }
+        format.js
+      end
     else
       render :new
     end

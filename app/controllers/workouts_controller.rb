@@ -6,7 +6,10 @@ class WorkoutsController < ApplicationController
   def create
     @workout = Workout.new(workout_params)
     if @workout.save
-      redirect_to '/'
+      respond_to do |format|
+        format.html { redirect_to root_path }
+        format.js
+      end
     else
       render :new
     end
