@@ -1,0 +1,21 @@
+class FoodsController < ApplicationController
+  def new
+    @food = Food.new
+  end
+
+  def create
+    @food = Food.new(food_params)
+    if @food.save
+      redirect_to '/'
+    else
+      render :new
+    end
+  end
+
+private
+  def food_params
+    params.require(:food).permit(:name, :cal_consumed)
+  end
+
+
+end
