@@ -22,5 +22,17 @@
   border-weight: 1px;
   border-radius: 10px;
   margin: 5px;
-  width: 20%
+  width: 20%;
+
+  h3 {
+    text-align: center;
+  }
+
+  .table_cal {
+    text-align: right;
+  }
+}
+
+.calories {
+  text-align: center;
 }

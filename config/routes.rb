@@ -1,8 +1,13 @@
 Rails.application.routes.draw do
   devise_for :users
-  
-  root :to => 'home#index'
 
-  resources :foods, :except => [:index, :show]
-  resources :workouts, :except => [:index, :show]
+  resources :users, :only => [:index] do
+    resources :workouts, :except => [:index, :show]
+  end
+
+  resources :users, :only => [:index] do
+    resources :foods, :except => [:index, :show]
+  end
+
+  root :to => 'home#index'
 end

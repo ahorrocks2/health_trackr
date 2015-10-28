@@ -1,7 +1,6 @@
 class HomeController < ApplicationController
   def index
-    @foods = Food.all
-    @workouts = Workout.all
+    @user = current_user
   end
 
 end
