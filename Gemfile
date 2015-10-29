@@ -12,6 +12,7 @@ gem 'bootstrap-sass'
 gem "letter_opener"
 gem 'chartkick'
 gem 'devise'
+gem 'will_paginate'
 
 group :development do
   gem 'byebug'

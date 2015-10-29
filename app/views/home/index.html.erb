@@ -24,6 +24,7 @@
             </tr>
           <% end %>
         </table>
+        <%= will_paginate @foods, :param_name => 'foods' %>
       <% end %>
     </div>
 
@@ -53,6 +54,7 @@
             </tr>
           <% end %>
         </table>
+        <%= will_paginate @workouts, :param_name => 'workouts' %>
       <% end %>
     </div>
 
