@@ -5,19 +5,16 @@
   <div class="col-sm-6">
     <h3>Food</h3>
     <hr>
-    <div id= "calories">
-      <h1><%= current_user.total_consumed %></h1>
-    </div>
 
     <div class="list">
-      <% if @user.foods.any? %>
+      <% if @foods.any? %>
         <table class="table">
           <tr>
             <th>Food</th>
             <th class = "table_cal">Calories</th>
           </tr>
 
-          <% @user.foods.each do |f| %>
+          <% @foods.each do |f| %>
             <tr>
               <td><%= f.name %></td>
               <td class="table_cal"><%= f.cal_consumed %></td>
@@ -28,25 +25,23 @@
     </div>
 
     <div class="add_track">
-      <%= link_to 'Add a Food', new_user_food_path(@user), id: 'new_food', class: 'btn btn-sm btn-primary form-control', remote: true %><br><br>
+      <%= link_to 'Add a Food', new_food_path, id: 'new_food', class: 'btn btn-sm btn-primary form-control', remote: true %><br><br>
     </div>
   </div>
 
   <div class="col-sm-6">
     <h3>Fitness</h3>
     <hr>
-    <div class = "calories">
-      <h1><%= current_user.total_burned %></h1>
-    </div>
+
     <div class="list">
-      <% if @user.workouts.any? %>
+      <% if @workouts.any? %>
         <table class="table">
           <tr>
             <th>Workout</th>
             <th class = "table_cal">Calories Burned</th>
           </tr>
 
-          <% @user.workouts.each do |w| %>
+          <% @workouts.each do |w| %>
             <tr>
               <td><%= w.name %></td>
               <td class = "table_cal"><%= w.cal_burned %></td>
@@ -57,7 +52,7 @@
     </div>
 
     <div class="add_track">
-      <%= link_to 'Add a Workout', new_user_workout_path(@user), id: 'new_workout', class: 'btn btn-sm btn-primary form-control', remote: true %><br><br>
+      <%= link_to 'Add a Workout', new_workout_path, id: 'new_workout', class: 'btn btn-sm btn-primary form-control', remote: true %><br><br>
     </div>
   </div>
 </div>

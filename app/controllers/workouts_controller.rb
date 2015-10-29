@@ -1,12 +1,10 @@
 class WorkoutsController < ApplicationController
   def new
-    @user = current_user
     @workout = Workout.new
   end
 
   def create
-    @workout =Workout.new(workout_params)
-    @workout.user = current_user
+    @workout = Workout.new(workout_params)
     if @workout.save
       respond_to do |format|
         format.html { redirect_to root_path }
