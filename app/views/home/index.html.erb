@@ -8,12 +8,13 @@
     <div class="calories">
       <h2><%= @total_cal_consumed %></h2>
     </div>
+
     <div class="list">
       <% if @foods.any? %>
         <table class="table">
           <tr>
-            <th>Food</th>
-            <th class = "table_cal">Calories</th>
+            <th><%= sortable 'name', 'Food' %></th>
+            <th class = "table_cal"><%= sortable 'cal_consumed', 'Calories' %></th>
           </tr>
 
           <% @foods.each do |f| %>
