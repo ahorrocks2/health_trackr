@@ -13,8 +13,8 @@
       <% if @foods.any? %>
         <table class="table">
           <tr>
-            <th><%= sortable 'name', 'Food' %></th>
-            <th class = "table_cal"><%= sortable 'cal_consumed', 'Calories' %></th>
+            <th><%= food_sortable 'name', 'Food' %></th>
+            <th class = "table_cal"><%= food_sortable 'cal_consumed', 'Calories' %></th>
           </tr>
 
           <% @foods.each do |f| %>
@@ -42,13 +42,13 @@
       <% if @workouts.any? %>
         <table class="table">
           <tr>
-            <th>Workout</th>
-            <th class = "table_cal">Calories Burned</th>
+            <th><%= workout_sortable 'exercise_type', 'Workout' %></th>
+            <th class = "table_cal"><%= workout_sortable 'cal_burned', 'Calories Burned' %></th>
           </tr>
 
           <% @workouts.each do |w| %>
             <tr>
-              <td><%= w.name %></td>
+              <td><%= w.exercise_type %></td>
               <td class = "table_cal"><%= w.cal_burned %></td>
             </tr>
           <% end %>

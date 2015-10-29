@@ -17,7 +17,7 @@ class WorkoutsController < ApplicationController
 
 private
   def workout_params
-    params.require(:workout).permit(:name, :cal_burned)
+    params.require(:workout).permit(:exercise_type, :cal_burned)
   end
 
 
