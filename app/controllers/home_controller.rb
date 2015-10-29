@@ -2,9 +2,14 @@ class HomeController < ApplicationController
   helper_method :sort_food_column, :sort_food_direction, :sort_workout_column, :sort_workout_direction
 
   def index
-    @foods = Food.order(sort_food_column + " " + sort_food_direction).paginate(:per_page => 3, :page => params[:foods])
+    if params[:search]
+      @foods = Food.where('name LIKE ?', "%#{params[:search]}%").order(sort_food_column + " " + sort_food_direction).paginate(:per_page => 3, :page => params[:foods])
+    else
+      @foods = Food.order(sort_food_column + " " + sort_food_direction).paginate(:per_page => 3, :page => params[:foods])
+    end
+
     @workouts = Workout.order(sort_workout_column + " " + sort_workout_direction).paginate(:per_page => 3, :page => params[:workouts])
-    @total_cal_consumed = Food.sum(:cal_consumed)
+    @total_cal_consumed = @foods.sum(:cal_consumed)
     @total_cal_burned = Workout.sum(:cal_burned)
   end
 

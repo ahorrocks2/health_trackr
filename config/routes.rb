@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
 
-  resources :workouts, :except => [:index, :show]
-  resources :foods, :except => [:index, :show]
-  
+  resources :workouts, :except => [:show]
+  resources :foods, :except => [:show]
+
   root :to => 'home#index'
 end
