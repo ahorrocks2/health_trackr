@@ -5,7 +5,9 @@
   <div class="col-sm-6">
     <h3>Food</h3>
     <hr>
-
+    <div class="calories">
+      <h2><%= @total_cal_consumed %></h2>
+    </div>
     <div class="list">
       <% if @foods.any? %>
         <table class="table">
@@ -32,7 +34,9 @@
   <div class="col-sm-6">
     <h3>Fitness</h3>
     <hr>
-
+    <div class="calories">
+      <h2><%= @total_cal_burned %></h2>
+    </div>
     <div class="list">
       <% if @workouts.any? %>
         <table class="table">
