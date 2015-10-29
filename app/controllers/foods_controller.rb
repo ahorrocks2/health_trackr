@@ -1,5 +1,4 @@
 class FoodsController < ApplicationController
-
   def new
     @food = Food.new
   end
@@ -20,11 +19,5 @@ private
   def food_params
     params.require(:food).permit(:name, :cal_consumed)
   end
-
-  def sort_foods
-    Food.order()
-  end
-
-
 
 end
